@@ -1,0 +1,15 @@
+sudo: false
+
+language: java
+
+jdk:
+  - openjdk9
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+
+script:
+  - mvn test -B
+  # - mvn -B cobertura:cobertura coveralls:cobertura
+  - rm -rf $HOME/.m2/repository/com/samskivert/jmustache
